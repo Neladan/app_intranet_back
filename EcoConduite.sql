@@ -34,7 +34,7 @@ CREATE TABLE Seance (
 
 CREATE TABLE Tranche (
     idTranche INT NOT NULL,
-    PRIMARY KEY (idSeance)
+    PRIMARY KEY (idTranche)
 );
 
 CREATE TABLE Module (
@@ -69,7 +69,7 @@ CREATE TABLE Paiement (
     dateReglement DATE NOT NULL,
     PRIMARY KEY (numDossier, idTranche),
     FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier),
-    FOREIGN KEY (idTranche) REFERENCES TRanche (idTranche)
+    FOREIGN KEY (idTranche) REFERENCES Tranche (idTranche)
 );
 
 CREATE TABLE Absence (
@@ -88,3 +88,7 @@ CREATE TABLE Participe (
     FOREIGN KEY (idSeance) REFERENCES Seance (idSeance),
     FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier)
 );
+
+insert INTO Client (nom, prenom, dateNais) VALUES 
+    ('ATCHAOUE', 'Giovanni', '2000-05-18'),
+    ('ADANKON', 'CYR-Freddy', '2000-01-20');

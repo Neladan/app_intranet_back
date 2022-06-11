@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // setup the server port
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 /*
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
@@ -18,15 +18,14 @@ app.get('/', (req, res)=>{
     res.send("<h1>Hello World <br> API Eco-conduite</h1>");
 });
 
-//--------------------
-/*
-// import employee routes
-const employeeRoutes = require('./src/routes/employee.route');
 
-// create employee routes
-app.use('/api/v1/employee', employeeRoutes);
-*/
-//----------------------
+// import client routes
+const clientRoutes = require('./src/routes/client.route');
+
+
+// create client routes
+app.use('/api/ecoc/client', clientRoutes);
+
 
 
 // listen to the port
