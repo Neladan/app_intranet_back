@@ -24,6 +24,12 @@ CREATE TABLE Client (
     PRIMARY KEY (numClient)
 );
 
+CREATE TABLE Module (
+    numModule INT NOT NULL AUTO_INCREMENT,
+    nomModule VARCHAR(100) NOT NULL,
+    ndrSeanceMod INT NOT NULL,
+    PRIMARY KEY (numModule)
+);
 
 CREATE TABLE Seance (
     idSeance INT NOT NULL AUTO_INCREMENT,
@@ -37,12 +43,6 @@ CREATE TABLE Seance (
     FOREIGN KEY (codeTypePermis) REFERENCES TypePermis (codeTypePermis)
 );
 
-CREATE TABLE Module (
-    numModule INT NOT NULL AUTO_INCREMENT,
-    nomModule VARCHAR(100) NOT NULL,
-    ndrSeanceMod INT NOT NULL,
-    PRIMARY KEY (numModule)
-);
 
 CREATE TABLE Dossier (
     numDossier INT NOT NULL AUTO_INCREMENT,
