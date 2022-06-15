@@ -19,6 +19,7 @@ CREATE TABLE Client (
     numClient INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(50) NOT NULL,
     prenom VARCHAR(150) NOT NULL,
+    email VARCHAR (250),
     dateNais DATE NOT NULL,
     PRIMARY KEY (numClient)
 );
@@ -75,6 +76,8 @@ CREATE TABLE Paiement (
 CREATE TABLE Participe (
     idSeance INT NOT NULL,
     numDossier INT NOT NULL,
+    presence BOOLEAN NOT NULL,
+    motif VARCHAR (250) NOT NULL,
     PRIMARY KEY (idSeance, numDossier),
     FOREIGN KEY (idSeance) REFERENCES Seance (idSeance),
     FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier)
