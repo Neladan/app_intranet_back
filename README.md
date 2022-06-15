@@ -41,5 +41,5 @@ Chargé des entités suivantes : Client, Dossier, Paiement, User
 
  *Participe*  
  - CRUD
- - Lister les clients ayant participé à une séance donnée (id, nom, prénom)
- - Lister les clients ayant raté une séance (id, nom, preénom)
+ - Lister les clients ayant participé à une séance donnée (id, nom, prenom)
+ - Lister les clients ayant raté une séance (id, nom, prenom)
