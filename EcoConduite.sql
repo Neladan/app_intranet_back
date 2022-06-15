@@ -62,7 +62,7 @@ CREATE TABLE Dossier (
 );
 
 CREATE TABLE Paiement (
-    idTranche INT NOT NULL AUTO_INCREMENT,
+    idTranche INT NOT NULL,
     numDossier INT NOT NULL,
     montant INT NOT NULL,
     dateEcheance DATE NOT NULL,
