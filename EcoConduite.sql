@@ -4,48 +4,47 @@ USE EcoConduite;
 
 
 CREATE TABLE Examen (
-    codeExamen INT NOT NULL,
+    codeExamen INT NOT NULL AUTO_INCREMENT,
     DateExamen DATE NOT NULL,
     PRIMARY KEY (codeExamen)
 );
 
 CREATE TABLE TypePermis (
-    codeTypePermis INT NOT NULL,
+    codeTypePermis INT NOT NULL AUTO_INCREMENT,
     nomTypePermis VARCHAR(10) NOT NULL,
     PRIMARY KEY (codeTypePermis)
 );
 
 CREATE TABLE Client (
-    numClient INT NOT NULL,
+    numClient INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(50) NOT NULL,
-    prenom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(150) NOT NULL,
     dateNais DATE NOT NULL,
     PRIMARY KEY (numClient)
 );
 
 
 CREATE TABLE Seance (
-    idSeance INT NOT NULL,
+    idSeance INT NOT NULL AUTO_INCREMENT,
     dateSeance DATE NOT NULL,
     heureDebut TIME NOT NULL,
     heureFin TIME NOT NULL,
-    PRIMARY KEY (idSeance)
-);
-
-CREATE TABLE Tranche (
-    idTranche INT NOT NULL,
-    PRIMARY KEY (idTranche)
+    numModule INT NOT NULL,
+    codeTypePermis INT NOT NULL,
+    PRIMARY KEY (idSeance),
+    FOREIGN KEY (numModule) REFERENCES Module (numModule),
+    FOREIGN KEY (codeTypePermis) REFERENCES TypePermis (codeTypePermis)
 );
 
 CREATE TABLE Module (
-    numModule INT NOT NULL,
+    numModule INT NOT NULL AUTO_INCREMENT,
     nomModule VARCHAR(100) NOT NULL,
     ndrSeanceMod INT NOT NULL,
     PRIMARY KEY (numModule)
 );
 
 CREATE TABLE Dossier (
-    numDossier INT NOT NULL,
+    numDossier INT NOT NULL AUTO_INCREMENT,
     dateInsc DATE NOT NULL,
     resultat INT NOT NULL,
     montantDefini INT NOT NULL,
@@ -62,24 +61,16 @@ CREATE TABLE Dossier (
 );
 
 CREATE TABLE Paiement (
+    idTranche INT NOT NULL AUTO_INCREMENT,
     numDossier INT NOT NULL,
-    idTranche INT NOT NULL,
     montant INT NOT NULL,
     dateEcheance DATE NOT NULL,
     dateReglement DATE NOT NULL,
     PRIMARY KEY (numDossier, idTranche),
-    FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier),
-    FOREIGN KEY (idTranche) REFERENCES Tranche (idTranche)
-);
-
-CREATE TABLE Absence (
-    idSeance INT NOT NULL,
-    numDossier INT NOT NULL,
-    motif VARCHAR(500) NOT NULL,
-    PRIMARY KEY (idSeance, numDossier),
-    FOREIGN KEY (idSeance) REFERENCES Seance (idSeance),
     FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier)
 );
+
+
 
 CREATE TABLE Participe (
     idSeance INT NOT NULL,
@@ -91,4 +82,4 @@ CREATE TABLE Participe (
 
 insert INTO Client (nom, prenom, dateNais) VALUES 
     ('ATCHAOUE', 'Giovanni', '2000-05-18'),
-    ('ADANKON', 'CYR-Freddy', '2000-01-20');
+    ('ADANKON', 'Cyr-Freddy', '2000-01-20');
