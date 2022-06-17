@@ -18,13 +18,22 @@ app.get('/', (req, res)=>{
     res.send("<h1>Hello World <br> API Eco-conduite</h1>");
 });
 
+// *********All about CLIENT******************** 
 
 // import client routes
 const clientRoutes = require('./src/routes/client.route');
 
-
 // create client routes
 app.use('/api/ecoc/client', clientRoutes);
+
+
+// *********All about SEANCE******************** 
+
+//import seance routes
+const seanceRoutes = require('./src/routes/seance.route');
+
+//create seance routes
+app.use('/api/ecoc/seance', seanceRoutes); 
 
 
 
