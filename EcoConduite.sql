@@ -83,6 +83,6 @@ CREATE TABLE Participe (
     FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier)
 );
 
-insert INTO Client (nom, prenom, dateNais) VALUES 
-    ('ATCHAOUE', 'Giovanni', '2000-05-18'),
-    ('ADANKON', 'Cyr-Freddy', '2000-01-20');
+insert INTO Client (nom, prenom, email, dateNais) VALUES 
+    ('ATCHAOUE', 'Giovanni', 'gio@gmail.com', '2000-05-18'),
+    ('ADANKON', 'Cyr-Freddy', 'cyr@gmail.com', '2000-01-20');
