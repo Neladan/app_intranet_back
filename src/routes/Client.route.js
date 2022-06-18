@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const ClientController = require('../controllers/client.controller');
+const ClientController = require('../controllers/Client.controller');
 
 //route to get all customers
 router.get('/', ClientController.getAllClients);

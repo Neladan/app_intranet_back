@@ -15,13 +15,15 @@ CREATE TABLE TypePermis (
     PRIMARY KEY (codeTypePermis)
 );
 
-CREATE TABLE Client (
-    numClient INT NOT NULL AUTO_INCREMENT,
-    nom VARCHAR(50) NOT NULL,
-    prenom VARCHAR(150) NOT NULL,
-    email VARCHAR (250),
-    dateNais DATE NOT NULL,
-    PRIMARY KEY (numClient)
+CREATE TABLE Utilisateur (
+    idUser INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR (250) NOT NULL,
+    motPasse VARCHAR (400) NOT NULL,
+    roleUser VARCHAR (50) NOT NULL,
+    nom VARCHAR(50),
+    prenom VARCHAR(150),
+    dateNais DATE,
+    PRIMARY KEY (idUser)
 );
 
 CREATE TABLE Module (
@@ -38,9 +40,11 @@ CREATE TABLE Seance (
     heureFin TIME NOT NULL,
     numModule INT NOT NULL,
     codeTypePermis INT NOT NULL,
+    codeExamen INT,
     PRIMARY KEY (idSeance),
     FOREIGN KEY (numModule) REFERENCES Module (numModule),
-    FOREIGN KEY (codeTypePermis) REFERENCES TypePermis (codeTypePermis)
+    FOREIGN KEY (codeTypePermis) REFERENCES TypePermis (codeTypePermis),
+    FOREIGN KEY (codeExamen) REFERENCES Examen (codeExamen)
 );
 
 
@@ -51,12 +55,12 @@ CREATE TABLE Dossier (
     montantDefini INT NOT NULL,
     nbrSeance INT NOT NULL,
     codeTypePermis INT NOT NULL,
-    numClient INT NOT NULL,
-    codeExamen INT NOT NULL,
+    idUser INT NOT NULL,
+    codeExamen INT,
     numModule INT NOT NULL,
     PRIMARY KEY (numDossier),
     FOREIGN KEY (codeTypePermis) REFERENCES TypePermis (codeTypePermis),
-    FOREIGN KEY (numClient) REFERENCES Client (numClient),
+    FOREIGN KEY (idUser) REFERENCES Utilisateur (idUser),
     FOREIGN KEY (codeExamen) REFERENCES Examen (codeExamen),
     FOREIGN KEY (numModule) REFERENCES Module (numModule)
 );
@@ -83,6 +87,8 @@ CREATE TABLE Participe (
     FOREIGN KEY (numDossier) REFERENCES Dossier (numDossier)
 );
 
-insert INTO Client (nom, prenom, email, dateNais) VALUES 
-    ('ATCHAOUE', 'Giovanni', 'gio@gmail.com', '2000-05-18'),
-    ('ADANKON', 'Cyr-Freddy', 'cyr@gmail.com', '2000-01-20');
+insert INTO Utilisateur (email, motPasse, roleUser, nom, prenom, dateNais) VALUES 
+    ('gio@gmail.com', 'mugiwara', 'client','ATCHAOUE', 'Giovanni', '2000-05-18'),
+    ('cyr@gmail.com', 'senpai', 'client', 'ADANKON', 'Cyr-Freddy', '2000-01-20'),
+    ('admin@gmail.com', 'admin', 'admmin', NULL, NULL, NULL),
+    ('employee@gmail.com', 'employee', 'employee', NULL, NULL, NULL);
