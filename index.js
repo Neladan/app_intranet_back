@@ -6,13 +6,13 @@ const app = express();
 
 // setup the server port
 const port = process.env.PORT || 8080;
-/*
+
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
 
 // parse request data content type application/json
 app.use(bodyParser.json());
-*/
+
 // define root route
 app.get('/', (req, res)=>{
     res.send("<h1>Hello World <br> API Eco-conduite</h1>");
@@ -20,12 +20,24 @@ app.get('/', (req, res)=>{
 
 // *********All about CLIENT******************** 
 
-// import client routes
-const clientRoutes = require('./src/routes/client.route');
+// import customer routes
+const clientRoutes = require('./src/routes/Client.route');
 
-// create client routes
+
+// create customer routes
+
 app.use('/api/ecoc/client', clientRoutes);
 
+//-----------------------------------------------
+
+// import customer routes
+const UtilisateurRoutes = require('./src/routes/Utilisateur.route');
+
+
+// create customer routes
+app.use('/api/ecoc/utilisateur', UtilisateurRoutes);
+
+//----------------------------
 
 // *********All about SEANCE******************** 
 
