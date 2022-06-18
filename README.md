@@ -8,7 +8,7 @@ Chargé des entités suivantes : Client, Dossier, Paiement, User
 
 *Client*
  - CRUD
- - Récupérer un sule client donné 
+ - Récupérer un seul client donné 
 
  *Dossier*
 - CRUD
