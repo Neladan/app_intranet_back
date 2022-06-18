@@ -10,4 +10,4 @@ exports.getSeanceList = (rep, res) => {
         console.log('Seances', seance);
         res.send(seance)
     })
-}    
+}     yco_y

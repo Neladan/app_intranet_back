@@ -6,4 +6,4 @@ const seanceController = require('../controllers/seance.controller');
 //get all seance 
 router.get('/', seanceController.getSeanceList);
 
-module.exports = router;
+module.exports = router; 
