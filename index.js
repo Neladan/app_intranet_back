@@ -30,7 +30,7 @@ app.use('/api/ecoc/client', clientRoutes);
 
 //-----------------------------------------------
 
-// import customer routes
+// import user routes
 const UtilisateurRoutes = require('./src/routes/Utilisateur.route');
 
 
@@ -42,10 +42,10 @@ app.use('/api/ecoc/utilisateur', UtilisateurRoutes);
 // *********All about SEANCE******************** 
 
 //import seance routes
-const seanceRoutes = require('./src/routes/seance.route');
+//const seanceRoutes = require('./src/routes/seance.route');
 
 //create seance routes
-app.use('/api/ecoc/seance', seanceRoutes); 
+//app.use('/api/ecoc/seance', seanceRoutes); 
 
 
 
