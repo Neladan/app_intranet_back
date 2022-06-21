@@ -25,7 +25,7 @@ Seance.getSeanceList = (result) => {
 }
 
 //get seance by ID
-Seance.getSeanceByID = (idSEance, result) => {
+Seance.getSeanceByID = (idSeance, result) => {
     dbConn.query('SELECT * FROM Seance WHERE idSeance=?', idSeance, (err, res)=> {
         if(err){
             console.log("Error while fetching seance by ID", idSeance);
