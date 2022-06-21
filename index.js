@@ -35,6 +35,23 @@ const seanceRoutes = require('./src/routes/seance.route');
 //create seance routes
 app.use('/api/ecoc/seance', seanceRoutes); 
 
+// *************All about MODULE****************
+
+//import module routes
+const moduleRoutes = require ('./src/routes/module.route');
+
+// create module routes 
+app.use('/api/ecoc/module', moduleRoutes);
+
+//*********** All about Examen*********************
+
+// import examen route
+const examenRoutes = reuqire ('./src/routes/examen.route');
+
+// create examen route
+app.use('/api/ecoc/examen', examenRoutes);
+
+
 
 
 // listen to the port
