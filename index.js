@@ -51,6 +51,14 @@ const examenRoutes = reuqire ('./src/routes/examen.route');
 // create examen route
 app.use('/api/ecoc/examen', examenRoutes);
 
+//**************All about TypePermis************
+
+// import TypePermis routes
+const typePermisRoutes = require ('./src/routes/typePermis.route');
+
+// create TypePermis route
+app.use('/api/ecoc/typePermis', typePermisRoutes);
+
 
 
 
