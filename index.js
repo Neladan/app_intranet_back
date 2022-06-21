@@ -46,7 +46,7 @@ app.use('/api/ecoc/module', moduleRoutes);
 //*********** All about Examen*********************
 
 // import examen route
-const examenRoutes = reuqire ('./src/routes/examen.route');
+const examenRoutes = require ('./src/routes/examen.route');
 
 // create examen route
 app.use('/api/ecoc/examen', examenRoutes);
@@ -58,6 +58,14 @@ const typePermisRoutes = require ('./src/routes/typePermis.route');
 
 // create TypePermis route
 app.use('/api/ecoc/typePermis', typePermisRoutes);
+
+//*************All about partcipe*********
+
+// import participe
+const partcipeRoutes = require ('./src/routes/participe.route');
+
+// create participe 
+app.use =('/api/ecoc/participe', partcipeRoutes);
 
 
 
