@@ -62,8 +62,8 @@ exports.updateExamen = (req, res) => {
 } 
 
 // delete examen
-exports.deleteexamen = (req, res) => {
-    ExamenModel.deleteexamen(res.params.codeExamen, (err, examen) => {
+exports.deleteExamen = (req, res) => {
+    ExamenModel.deleteExamen(res.params.codeExamen, (err, examen) => {
         if(err)
         res.send(err); 
         res.json({sucesss: true, message: 'examen supprimée avec succes'});
