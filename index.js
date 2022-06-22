@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // setup the server port
-const port = process.env.PORT || 8080;
+const port = /*process.env.PORT ||*/ 8080;
 
 // parse request data content type application/x-www-form-rulencoded
 app.use(bodyParser.urlencoded({extended: false}));
@@ -38,7 +38,7 @@ const UtilisateurRoutes = require('./src/routes/Utilisateur.route');
 
 
 // create customer routes
-app.use('/api/ecoc/utilisateur', UtilisateurRoutes);
+app.use('/api/ecoc', UtilisateurRoutes);
 
 //----------------------------
 
