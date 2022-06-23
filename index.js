@@ -44,7 +44,7 @@ app.use('/api/ecoc', UtilisateurRoutes);
 //app.use('/api/ecoc/seance', seanceRoutes); 
 
 
-
+/*
 
 // *************All about MODULE****************
 
@@ -110,7 +110,7 @@ const dossierRoutes = require ('./src/routes/dossier.route');
 app.use('/api/ecoc/dossier', dossierRoutes)
 
 
-
+*/
 
 
 // listen to the port
