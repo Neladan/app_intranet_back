@@ -27,6 +27,8 @@ const clientRoutes = require('./src/routes/client.route');
 app.use('/api/ecoc/client', clientRoutes);
 
 
+
+
 // *********All about SEANCE******************** 
 
 //import seance routes
@@ -34,6 +36,9 @@ const seanceRoutes = require('./src/routes/seance.route');
 
 //create seance routes
 app.use('/api/ecoc/seance', seanceRoutes); 
+
+
+
 
 // *************All about MODULE****************
 
@@ -43,6 +48,9 @@ const moduleRoutes = require ('./src/routes/module.route');
 // create module routes 
 app.use('/api/ecoc/module', moduleRoutes);
 
+
+
+
 //*********** All about Examen*********************
 
 // import examen route
@@ -50,6 +58,9 @@ const examenRoutes = require ('./src/routes/examen.route');
 
 // create examen route
 app.use('/api/ecoc/examen', examenRoutes);
+
+
+
 
 //**************All about TypePermis************
 
@@ -59,6 +70,9 @@ const typePermisRoutes = require ('./src/routes/typePermis.route');
 // create TypePermis route
 app.use('/api/ecoc/typePermis', typePermisRoutes);
 
+
+
+
 //*************All about partcipe*********
 
 // import participe
@@ -66,14 +80,28 @@ const partcipeRoutes = require ('./src/routes/participe.route');
 
 // create participe 
 app.use('/api/ecoc/participe', partcipeRoutes);
+
+
+
+
 //********************All about Paiement************
 
 //import paiement
 const paiementRoutes = require ('./src/routes/paiement.route');
 
 // create paiement
-app.use('/api/ecoc/paiemet', paiementRoutes);
+app.use('/api/ecoc/paiement', paiementRoutes);
 
+
+
+
+//***************All about dossier*************
+
+// import dossier
+const dossierRoutes = require ('./src/routes/dossier.route');
+
+// create dossier
+app.use('/api/ecoc/dossier', dossierRoutes)
 
 
 
