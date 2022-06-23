@@ -34,7 +34,7 @@ exports.createNewParticipe = (req, res) => {
         res.send(400).send({sucesss: false, message: 'Entrez tout les champs'});
     } 
     else{
-        ParticipeModel.createparticipe(participeReqData, (err, participe) => {
+        ParticipeModel.createParticipe(participeReqData, (err, participe) => {
             if(err)
             res.send(err);
             res.json({status: true, message: 'participe ajoutée avec succes', data: participe.insertidparticipe})
@@ -44,7 +44,7 @@ exports.createNewParticipe = (req, res) => {
 }
 
 // update participe 
-exports.updateparticipe = (req, res) => {
+exports.updateParticipe = (req, res) => {
     const participeReqData = new ParticipeModel(req.body);
     console.log('participeReqData update', participeReqData);
     // check null
@@ -52,7 +52,7 @@ exports.updateparticipe = (req, res) => {
         res.send(400).send({sucesss: false, message: 'Entrez tout les champs'});
     } 
     else{
-        ParticipeModel.updateparticipe(req.params.idSeance, req.params.numDossier, participeReqData, (err, participe) => {
+        ParticipeModel.updateParticipe(req.params.idSeance, req.params.numDossier, participeReqData, (err, participe) => {
             if(err)
             res.send(err);
             res.json({status: true, message: 'participe modifiée avec succes'})
@@ -62,8 +62,8 @@ exports.updateparticipe = (req, res) => {
 } 
 
 // delete participe
-exports.deleteparticipe = (req, res) => {
-    ParticipeModel.deleteparticipe(res.params.idSeance, res.params.numDossier, (err, participe) => {
+exports.deleteParticipe = (req, res) => {
+    ParticipeModel.deleteParticipe(res.params.idSeance, res.params.numDossier, (err, participe) => {
         if(err)
         res.send(err); 
         res.json({sucesss: true, message: 'participe supprimée avec succes'});
