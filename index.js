@@ -65,7 +65,16 @@ app.use('/api/ecoc/typePermis', typePermisRoutes);
 const partcipeRoutes = require ('./src/routes/participe.route');
 
 // create participe 
-app.use =('/api/ecoc/participe', partcipeRoutes);
+app.use('/api/ecoc/participe', partcipeRoutes);
+//********************All about Paiement************
+
+//import paiement
+const paiementRoutes = require ('./src/routes/paiement.route');
+
+// create paiement
+app.use('/api/ecoc/paiemet', paiementRoutes);
+
+
 
 
 
