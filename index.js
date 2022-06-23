@@ -20,12 +20,24 @@ app.get('/', (req, res)=>{
 
 // *********All about CLIENT******************** 
 
-// import client routes
-const clientRoutes = require('./src/routes/client.route');
+// import customer routes
+const clientRoutes = require('./src/routes/Client.route');
 
-// create client routes
+
+// create customer routes
+
 app.use('/api/ecoc/client', clientRoutes);
 
+//-----------------------------------------------
+
+// import customer routes
+const UtilisateurRoutes = require('./src/routes/Utilisateur.route');
+
+
+// create customer routes
+app.use('/api/ecoc/utilisateur', UtilisateurRoutes);
+
+//----------------------------
 
 
 
