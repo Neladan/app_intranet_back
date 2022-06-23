@@ -9,7 +9,7 @@ const UtilisateurController = require('../controllers/Utilisateur.controller');
 router.get('/', UtilisateurController.getAllUtilisateurs);
 
 //route to get user by id
-router.get('/:idUser', UtilisateurController.getUtilisateurById);
+//router.get('/:idUser', UtilisateurController.getUtilisateurById);
 
 //route to login
 router.post('/login', UtilisateurController.toLogin);
@@ -25,18 +25,27 @@ const verifyJWT = (req, res, next) => {
     }else {
         jwt.verify(token, "jwtSecret", (err, decoded) => {
             if(err) {
-                res.json({auth: false, message: 'you failed to authenticate'});
+                res.json({auth: false, message: 'you failed to authenticate jwt'});
             }else {
+                //res.json({auth: false, message: 'you failed to authenticate jwt pb'});
                 req.email = decoded.email;
-                next()
+                req.idUser = decoded.idUser;
+                next();
             }
         });
     }
 
 };
 
+
 //route to verify authentication
 router.get('/isUserAuth', verifyJWT, UtilisateurController.isUserAuth);
 
+
+//route to get all customers
+router.get('/client', UtilisateurController.getAllClients);
+
+//route to get customer by id
+router.get('/client/:numClient', UtilisateurController.getClientById);
 
 module.exports = router;

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
 // create express app
 const app = express();
 
@@ -20,16 +21,6 @@ app.use(bodyParser.json());
 app.get('/', (req, res)=>{
     res.send("<h1>Hello World <br> API Eco-conduite</h1>");
 });
-
-// *********All about CLIENT******************** 
-
-// import customer routes
-const clientRoutes = require('./src/routes/Client.route');
-
-
-// create customer routes
-
-app.use('/api/ecoc/client', clientRoutes);
 
 //-----------------------------------------------
 
