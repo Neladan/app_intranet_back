@@ -11,7 +11,7 @@ Module.getModuleList = (result) => {
     dbConn.query('SELECT * FROM Module', (err, res) => {
         if(err){
             console.log("Error while fetching Modules", err);
-            result(null, err);
+            result(err, null);
         }
         else {
             console.log("Modules fetched successfully");

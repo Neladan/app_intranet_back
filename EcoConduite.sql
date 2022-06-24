@@ -51,7 +51,7 @@ CREATE TABLE Seance (
 CREATE TABLE Dossier (
     numDossier INT NOT NULL AUTO_INCREMENT,
     dateInsc DATE NOT NULL,
-    resultat INT NOT NULL,
+    resultat VARCHAR(200),
     montantDefini INT NOT NULL,
     nbrSeance INT NOT NULL,
     codeTypePermis INT NOT NULL,
@@ -88,7 +88,16 @@ CREATE TABLE Participe (
 );
 
 insert INTO Utilisateur (email, motPasse, roleUser, nom, prenom, dateNais) VALUES 
-    ('gio@gmail.com', 'mugiwara', 'client','ATCHAOUE', 'Giovanni', '2000-05-18'),
-    ('cyr@gmail.com', 'senpai', 'client', 'ADANKON', 'Cyr-Freddy', '2000-01-20'),
-    ('admin@gmail.com', 'admin', 'admmin', NULL, NULL, NULL),
-    ('employee@gmail.com', 'employee', 'employee', NULL, NULL, NULL);
+    ('gio@gmail.com', '$2b$10$RqWNv3KQLSUX4HAo5t7O.eW7OBhS9ZN1UPY2dnaKChsaLLXbDp35a', 'client','ATCHAOUE', 'Giovanni', '2000-05-18'),
+    ('cyr@gmail.com', '$2b$10$RqWNv3KQLSUX4HAo5t7O.eW7OBhS9ZN1UPY2dnaKChsaLLXbDp35a', 'client', 'ADANKON', 'Cyr-Freddy', '2000-01-20'),
+    ('admin@gmail.com', '$2b$10$RqWNv3KQLSUX4HAo5t7O.eW7OBhS9ZN1UPY2dnaKChsaLLXbDp35a', 'admmin', NULL, NULL, NULL),
+    ('employee@gmail.com', '$2b$10$RqWNv3KQLSUX4HAo5t7O.eW7OBhS9ZN1UPY2dnaKChsaLLXbDp35a', 'employee', NULL, NULL, NULL);
+
+insert INTO Module (nomModule, nbrSeanceMod) VALUES 
+    ('normale', 30),
+    ('accéléré', 15);
+
+insert INTO TypePermis (nomTypePermis) VALUES 
+    ('A'),
+    ('B'),
+    ('C');

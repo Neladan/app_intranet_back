@@ -91,9 +91,14 @@ exports.getAllClients = (req, res) => {
   //console.log('Ici tous les clients')
   UtilisateurModel.getAllClients((err, clients) => {
     console.log("here we are");
-    if (err) res.send(err);
-    console.log("customers", clients);
-    res.send(clients);
+    if (err) res.json({ status: false, message: err });
+    if (clients) {
+      console.log("clients", clients);
+      res.json({
+        status: true,
+        customer: clients,
+      });
+    }
   });
 };
 
