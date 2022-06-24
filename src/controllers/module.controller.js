@@ -2,16 +2,24 @@ const { createConnection } = require('mysql');
 const ModuleModel = require ('../models/module.model');
 
 // get module list
-exports.getModuleList = (rep, res) => {
+exports.getModuleList = (req, res) => {
    // console.log("Here are all modules");
     ModuleModel.getModuleList((err, module) => {
         console.log("There are here");
-        if(err)
-        res.send(err);
-        console.log('modules', module);
-        res.send(module)
+        if (err) {
+            res.json({ status: false, message: err });
+          }
+          if (module) {
+            console.log('modules', module);
+            res.json({
+              status: true,
+              modules: module,
+            });
+          }
     })
-}   
+};
+
+
 
 // get module by ID
 exports.getModuleByID = (req, res) => {
@@ -39,7 +47,7 @@ exports.createNewModule = (req, res) => {
             res.send(err);
             res.json({status: true, message: 'module ajoutée avec succes', data: module.insertnumModule})
             
-        })
+        });
     }
 }
 

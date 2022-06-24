@@ -44,7 +44,7 @@ app.use('/api/ecoc', UtilisateurRoutes);
 //app.use('/api/ecoc/seance', seanceRoutes); 
 
 
-/*
+
 
 // *************All about MODULE****************
 
@@ -55,7 +55,7 @@ const moduleRoutes = require ('./src/routes/module.route');
 app.use('/api/ecoc/module', moduleRoutes);
 
 
-
+/*
 
 //*********** All about Examen*********************
 
@@ -67,7 +67,7 @@ app.use('/api/ecoc/examen', examenRoutes);
 
 
 
-
+*/
 //**************All about TypePermis************
 
 // import TypePermis routes
@@ -76,7 +76,7 @@ const typePermisRoutes = require ('./src/routes/typePermis.route');
 // create TypePermis route
 app.use('/api/ecoc/typePermis', typePermisRoutes);
 
-
+/*
 
 
 //*************All about partcipe*********
@@ -88,7 +88,7 @@ const partcipeRoutes = require ('./src/routes/participe.route');
 app.use('/api/ecoc/participe', partcipeRoutes);
 
 
-
+*/
 
 //********************All about Paiement************
 
@@ -110,7 +110,7 @@ const dossierRoutes = require ('./src/routes/dossier.route');
 app.use('/api/ecoc/dossier', dossierRoutes)
 
 
-*/
+
 
 
 // listen to the port

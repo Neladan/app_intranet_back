@@ -1,9 +1,8 @@
 var dbConn = require('../../config/db.config');
 
 var Dossier = function(dossier) {
-    this.numDossier = dossier.numDossier;
-    this.dateInsc = new Date()
-    this.resultat = dossier.resultat;
+    this.dateInsc = new Date();
+    this.resultat = dossier.resultat === '' ? undefined : dossier.resultat;
     this.montantdefini = dossier.montantdefini;
     this.nbrSeance = dossier.nbrSeance;
     this.idUser = dossier.idUser;

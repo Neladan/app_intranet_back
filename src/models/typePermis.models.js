@@ -24,7 +24,7 @@ TypePermis.getTypePermisByID = (codeTypePermis, result) => {
     dbConn.query('SELECT * FROM TypePermis WHERE codeTypePermis=?', codeTypePermis, (err, res)=> {
         if(err){
             console.log("Error while fetching TypePermis by ID", codeTypePermis);
-            result(null, err);
+            result(err, null);
         }
         else {
             result(null, res); 
